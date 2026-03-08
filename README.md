@@ -1,3 +1,7 @@
+![GitHub issues](https://img.shields.io/github/issues/x_api_ex)
+![GitHub stars](https://img.shields.io/github/stars/x_api_ex)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 # XApiEx
 
 Elixir HTTP client for the [X API v2](https://docs.x.com). Wraps all major v2 endpoints with typed request/response structs and a Tesla-based connection layer.
@@ -122,3 +126,14 @@ Documentation is generated with [ExDoc](https://github.com/elixir-lang/ex_doc):
 ```console
 mix docs
 ```
+
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
