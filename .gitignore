@@ -1,0 +1,35 @@
+# Mix build artifacts
+/_build
+/cover
+/deps
+/doc
+/.fetch
+*.ez
+
+# Erlang crash dumps
+erl_crash.dump
+
+# Dialyzer PLT files
+/priv/plts
+
+# Editor and IDE
+/.elixir_ls
+/.elixir-tools
+/.idea
+*.iml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Environment / secrets
+.env
+.env.*
+*.secret.exs
+
+# Hex package artifacts
+/hex_metadata.config
+
+# Test coverage
+/cover

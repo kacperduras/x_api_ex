@@ -1,0 +1,46 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - "v*"
+
+env:
+  ELIXIR_VERSION: "1.19.5"
+  OTP_VERSION: "28.4"
+
+jobs:
+  publish:
+    name: Publish to Hex.pm
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Elixir
+        uses: erlef/setup-beam@v1
+        with:
+          elixir-version: ${{ env.ELIXIR_VERSION }}
+          otp-version: ${{ env.OTP_VERSION }}
+
+      - name: Restore deps cache
+        uses: actions/cache@v4
+        with:
+          path: deps
+          key: deps-${{ runner.os }}-${{ hashFiles('**/mix.lock') }}
+          restore-keys: deps-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: mix deps.get
+
+      - name: Publish to Hex.pm
+        env:
+          HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
+        run: |
+          VERSION=$(mix run --no-start -e 'Mix.Project.config()[:version] |> IO.puts()')
+          if mix hex.info x_api_ex "$VERSION" > /dev/null 2>&1; then
+            echo "Version $VERSION already exists on Hex.pm — publishing with --replace"
+            mix hex.publish --yes --replace
+          else
+            mix hex.publish --yes
+          fi
