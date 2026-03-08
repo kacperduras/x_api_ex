@@ -1,5 +1,11 @@
 # XApiEx
 
+[![Hex.pm Version](https://img.shields.io/hexpm/v/x_api_ex?style=flat-square&logo=elixir)](https://hex.pm/packages/x_api_ex)
+[![Hex.pm Downloads](https://img.shields.io/hexpm/dt/x_api_ex?style=flat-square)](https://hex.pm/packages/x_api_ex)
+[![License: MIT](https://img.shields.io/hexpm/l/x_api_ex?style=flat-square)](https://github.com/kacperduras/x_api_ex/blob/main/LICENSE)
+[![HexDocs](https://img.shields.io/badge/docs-hexdocs-purple?style=flat-square&logo=elixir)](https://hexdocs.pm/x_api_ex)
+[![CI](https://img.shields.io/github/actions/workflow/status/kacperduras/x_api_ex/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/kacperduras/x_api_ex/actions/workflows/ci.yml)
+
 Elixir HTTP client for the [X API v2](https://docs.x.com). Wraps all major v2 endpoints with typed request/response structs and a Tesla-based connection layer.
 
 ## Installation
